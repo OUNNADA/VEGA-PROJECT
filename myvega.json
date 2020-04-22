@@ -1,0 +1,29 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "description": "My Interactive Map",
+  "data": {"url": "https://raw.githubusercontent.com/OUNNADA/ADV-MAP/master/inf_ข้อมูลจำนวนวินและผู้ขับขี่รถจักรยานยนต์สาธารณะ%20พ.ศ.2560.csv"},
+  "title": "จำนวนผู้ขับขี่รถจักรยานยนต์สาธารณะ และจำนวนผู้โดยสารในกรุงเทพมหานคร ปี พ.ศ.2560",
+  "width": 800,
+  "height":500, 
+  "mark": "point",
+  "encoding": {
+    "x": {"field": "num_rider", 
+          "title" : "จำนวนผู้โดยสาร (คน)",
+          "type": "quantitative"},
+    "y": {"field": "num_win", 
+          "title" : "จำนวนผู้ขับขี่รถจักรยานยนต์สาธารณะ  (คน)",
+           "type": "quantitative"},
+    
+    "tooltip": [{"field": "dname",
+                 "title" : "เขต", 
+                 "type": "nominal"},
+                {"field": "num_win", 
+                 "title" : "จำนวนผู้ขับขี่รถจักรยานยนต์สาธารณะ (คน)", 
+                 "type": "quantitative"},
+                {"field": "num_rider", 
+                 "title" : "จำนวนผู้โดยสาร (คน)", 
+                 "type": "quantitative"}],
+    "color": {"field": "dname", "type": "nominal","title" : "เขต"}
+  
+    }
+  }
